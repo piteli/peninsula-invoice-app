@@ -1,0 +1,24 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-container span {
+    font-family: 'spartan-medium';
+    font-size: 10px;
+    color: var(--input-label-color);
+    margin-bottom: 5px;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 1px var(--input-field-border-color);
+    height: 35px;
+    width: 100%;
+    outline-color: var(--button-action-hover);
+    font-family: 'spartan-bold';
+    padding-left: 10px;
+    padding-right: 10px;
+    caret-color: var(--button-action-hover);
+}

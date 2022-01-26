@@ -1,0 +1,33 @@
+.button-container {
+    border-radius: 50px;
+    background-color: var(--button-action-bg);
+    height: 30px;
+    width: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button-container:hover {
+    background-color: var(--button-action-hover);
+} 
+
+.button-icon {
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text {
+    font-size: 13px;
+    color: white;
+    font-family: 'spartan-semi-bold';
+    padding-right: 5px;
+}

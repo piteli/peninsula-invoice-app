@@ -1,0 +1,22 @@
+.button-container {
+    border-radius: 50px;
+    background-color: var(--button-delete-bg);
+    height: 30px;
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button-container:hover {
+    background-color: var(--button-delete-hover);
+} 
+
+.button-text {
+    font-size: 13px;
+    color: white;
+    font-family: 'spartan-semi-bold';
+}

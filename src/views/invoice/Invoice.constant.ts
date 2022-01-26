@@ -1,0 +1,1 @@
+export const INVOICE_HEADING_LABEL = "Invoices";

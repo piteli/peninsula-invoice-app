@@ -11,3 +11,118 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --dark-theme-bg-edit-btn: #1E2139;
+  --dark-theme-hover-edit-btn: white;
+  --dark-theme-color-text-edit-btn: #DEE2FB;
+  
+  --light-theme-bg-edit-btn: #F8F8FB;
+  --light-theme-hover-edit-btn: #DFE3FA;
+  --light-theme-color-text-edit-btn: #7E88C3; 
+
+  --dark-theme-bg-draft-btn: #373B54;
+  --dark-theme-hover-draft-btn: #1E2139;
+  --dark-theme-color-text-draft-btn: #DFE3FA;
+  
+  --light-theme-bg-draft-btn: #373B54 ;
+  --light-theme-hover-draft-btn: black;
+  --light-theme-color-text-draft-btn: #7E88C3; 
+
+  --button-action-bg: #7C5DFA;
+  --button-action-hover: #9277FF;
+
+  --button-delete-bg: #EC5757;
+  --button-delete-hover: #FF9796;
+
+  --input-label-color: #838dc5;
+  --input-field-border-color: rgba(131, 141, 197, 0.5);
+
+  --side-bar-bg: #252945;
+
+  --dark-theme-body-bg: #141625;
+  --dark-theme-font-color: #f8f8fb;
+
+  --dark-theme-side-bar-invoice-bg: #1E2139;
+}   
+
+.dark-edit-btn {
+  background-color: var(--dark-theme-bg-edit-btn);
+  color: var(--dark-theme-color-text-edit-btn);
+}
+
+.dark-edit-btn :hover {
+  background-color: var(--dark-theme-hover-edit-btn);
+}
+
+.light-edit-btn {
+  background-color: var(--light-theme-bg-edit-btn);
+  color: var(--light-theme-color-text-edit-btn);
+}
+
+.light-edit-btn :hover {
+  background-color: var(--light-theme-hover-edit-btn);
+}
+
+.dark-draft-btn {
+  background-color: var(--dark-theme-bg-draft-btn);
+  color: var(--dark-theme-color-text-draft-btn);
+}
+
+.dark-draft-btn :hover {
+  background-color: var(--dark-theme-hover-draft-btn);
+}
+
+.light-draft-btn {
+  background-color: var(--light-theme-bg-draft-btn);
+  color: var(--light-theme-color-text-draft-btn);
+}
+
+.light-draft-btn :hover {
+  background-color: var(--light-theme-hover-draft-btn);
+}
+
+@font-face{
+  font-family: "spartan-black";
+  src: url("/src/assets/fonts/spartan/Spartan-Black.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-bold";
+  src: url("/src/assets/fonts/spartan/Spartan-Bold.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-extra-bold";
+  src: url("/src/assets/fonts/spartan/Spartan-ExtraBold.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-extra-light";
+  src: url("/src/assets/fonts/spartan/Spartan-ExtraLight.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-light";
+  src: url("/src/assets/fonts/spartan/Spartan-Light.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-medium";
+  src: url("/src/assets/fonts/spartan/Spartan-Medium.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-regular";
+  src: url("/src/assets/fonts/spartan/Spartan-Regular.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-semi-bold";
+  src: url("/src/assets/fonts/spartan/Spartan-SemiBold.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "spartan-thin";
+  src: url("/src/assets/fonts/spartan/Spartan-Thin.ttf") format("truetype");
+}

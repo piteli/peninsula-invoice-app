@@ -1,0 +1,1 @@
+export const BUTTON_LABEL = 'Add New Item';

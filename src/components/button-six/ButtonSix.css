@@ -1,0 +1,22 @@
+.button-container {
+    border-radius: 50px;
+    background-color: #F8F8FB;
+    height: 30px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button-container:hover {
+    background-color: #DFE3FA;
+} 
+
+.button-text {
+    font-size: 13px;
+    color: #7E88C3;
+    font-family: 'spartan-semi-bold';
+}

@@ -1,0 +1,21 @@
+.parent-container {
+    width: 140px;
+    border-radius: 50px;    
+}
+
+.button-container {
+    border-radius: 50px;
+    height: 30px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button-text {
+    font-size: 13px;
+    font-family: 'spartan-semi-bold';
+}
