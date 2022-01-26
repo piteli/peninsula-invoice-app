@@ -17,8 +17,8 @@ function SideBarInvoiceComponent() {
             </div>
             <br />
             <p>Bill To</p>
-            <div className='full-field-custom-container'><FieldTextComponent /></div>
-            <div className='full-field-custom-container'><FieldTextComponent /></div>
+            <div className='full-field-custom-container'><FieldTextComponent label="Client's Name" /></div>
+            <div className='full-field-custom-container'><FieldTextComponent label="Client's Email" /></div>
             <div className='full-field-custom-container'><FieldTextComponent /></div>
             <div className='city-postcode-country'>
                 <div className='three-field-custom-container'><FieldTextComponent label="City" /></div>
@@ -26,11 +26,11 @@ function SideBarInvoiceComponent() {
                 <div className='three-field-custom-container'><FieldTextComponent label="Country" /></div>
             </div>
             <div className='invoicedate-paymentterms'>
-            <div className='two-field-custom-container'><FieldDatetimepickerComponent /></div>
+            <div className='two-field-custom-container'><FieldDatetimepickerComponent label="Invoice Date" /></div>
             <div className='two-field-custom-container'><FieldSelectComponent /></div>   
-                
             </div>
-            <FieldSelectComponent />
+            <div className='full-field-custom-container'><FieldTextComponent /></div>
+            <br />
             <h3>Item List</h3>
             
             <table>
@@ -42,7 +42,7 @@ function SideBarInvoiceComponent() {
                 </tr>
             </table>
 
-            <ButtonSixComponent />
+            <div className='add-new-item-btn'><ButtonSixComponent /></div>
             <div className='buttons-bottom'>
                 
             </div>

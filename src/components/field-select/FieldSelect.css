@@ -1,4 +1,4 @@
-.input-container {
+.select-input-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6,16 +6,16 @@
 
 span {
     font-family: 'spartan-medium';
-    font-size: 12px;
+    font-size: 10px;
     color: var(--input-label-color);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .select {
     border-radius: 5px;
-    border: solid 1px var(--input-field-border-color);
+    border: solid 0px var(--input-field-border-color);
     height: 35px;
-    width: 100vw;
+    width: 175px;
     outline-color: var(--button-action-hover);
     padding-left: 15px;
     padding-right: 15px;
@@ -27,12 +27,13 @@ span {
     background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: 50%;
-    background-color: white;
     font-family: 'spartan-bold';
     font-size: 13px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: var(--side-bar-bg);
+    color: white;
 }
 
 .select-clicked {
@@ -45,10 +46,11 @@ span {
 
 .options-container {
     position: absolute;
-    top: 80px;
+    bottom: 150px;
     border-radius: 5px;
     width: 230px;
     box-shadow: 1px 7px 10px 3px #cecece;
+    background-color: var(--side-bar-bg);
 }
 
 .option {

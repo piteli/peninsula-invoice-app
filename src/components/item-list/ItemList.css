@@ -55,9 +55,17 @@
     margin-right: 20px;
 }
 
+.status-box span {
+    margin: 0px;
+    padding: 0px;
+}
+
 .paid {
  background-color: rgba(48, 191, 146, 0.1);
- color: #30bf92;
+}
+
+.paid span {
+    color: #30bf92;
 }
 
 .pending {
@@ -65,7 +73,15 @@
     color: #cf780c;
 }
 
+.pending span {
+    color: #cf780c;
+}
+
 .draft {
     background-color: rgba(189, 193, 215, 0.1);
     color: #bdc1d7
+}
+
+.draft span {
+    color: #bdc1d7;
 }

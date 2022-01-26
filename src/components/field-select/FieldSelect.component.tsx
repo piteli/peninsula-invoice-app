@@ -37,7 +37,7 @@ function FieldSelectComponent(props: any) {
     }
 
     return(
-        <div className='input-container'>
+        <div className='select-input-container'>
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
                 <div tabIndex={0} className='select-container' onBlur={onBlurSelect} onClick={onClickSelect}>
                     <div className={(onSelect ? 'select-clicked' : '') + ' select'}>

@@ -13,7 +13,7 @@
 
 input {
     border-radius: 5px;
-    border: solid 1px var(--input-field-border-color);
+    border: solid 0px var(--input-field-border-color);
     height: 35px;
     width: 100%;
     outline-color: var(--button-action-hover);

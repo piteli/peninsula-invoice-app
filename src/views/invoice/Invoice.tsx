@@ -5,10 +5,10 @@ import { ReactComponent as IconArrowDown } from '../../assets/icons/icon-arrow-d
 import ButtonOneComponent from '../../components/button-one/ButtonOne.component';
 import ItemListComponent from '../../components/item-list/ItemList.component';
 
-function InvoiceView() {
+function InvoiceView(props: any) {
 
     function createNewInvoice() {
-        console.log('new invoice created!');
+        props?.setInvoiceMenuOpen(!props?.isInvoiceMenuOpen);
     }
 
     return (
@@ -29,7 +29,7 @@ function InvoiceView() {
                 </div>
             </div>
             <div className='bottom-part'>
-                <ItemListComponent />
+                <ItemListComponent columnFive="Paid" />
                 <ItemListComponent />
                 <ItemListComponent />
                 <ItemListComponent />

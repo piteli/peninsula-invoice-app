@@ -1,4 +1,4 @@
-.input-container {
+.input-datetime-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6,16 +6,16 @@
 
 span {
     font-family: 'spartan-medium';
-    font-size: 12px;
+    font-size: 10px;
     color: var(--input-label-color);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.select {
+.datetime {
     border-radius: 5px;
-    border: solid 1px var(--input-field-border-color);
+    border: solid 0px var(--input-field-border-color);
     height: 35px;
-    width: 100vw;
+    width: 160px;
     outline-color: var(--button-action-hover);
     padding-left: 15px;
     padding-right: 15px;
@@ -33,25 +33,28 @@ span {
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: var(--side-bar-bg);
+    color: white;
 }
 
-.select-clicked {
+.datetime-select-clicked {
     border: solid 2px var(--button-action-hover);
 }
 
-.select-container :hover {
+.datetime-container :hover {
     border: solid 2px var(--button-action-hover);
 }
 
 .datepicker-modal-container {
     position: absolute;
-    top: 80px;
+    bottom: 100px;
     border-radius: 5px;
-    width: 210px;
+    width: 220px;
     box-shadow: 1px 7px 10px 3px #cecece;
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: var(--side-bar-bg);
 }
 
 .top-modal-body {

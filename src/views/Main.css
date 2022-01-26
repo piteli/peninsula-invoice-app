@@ -12,3 +12,27 @@
     width: 100%;
 }
 
+.side-bar-overlay {
+    position: absolute;
+    left: 90px;
+    animation: ease-out;
+    animation-name: run;
+    animation-duration: 0.1s;
+}
+
+input {
+    background-color: var(--side-bar-bg);
+    color: white;
+}
+
+@keyframes run {
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: 45px;
+    }
+    100% {
+      left: 90px;    
+    }
+  }

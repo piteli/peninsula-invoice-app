@@ -100,10 +100,10 @@ function FieldDatetimepickerComponent(props: any) {
     }
 
     return(
-        <div className='input-container'>
+        <div className='input-datetime-container'>
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
-                <div tabIndex={0} className='select-container' onBlur={onBlurSelect} onClick={onClickSelect}>
-                    <div className={(onSelect ? 'select-clicked' : '') + ' select'}>
+                <div tabIndex={0} className='datetime-container' onBlur={onBlurSelect} onClick={onClickSelect}>
+                    <div className={(onSelect ? 'datetime-select-clicked' : '') + ' datetime'}>
                         {selectLabel}
                     </div>
                 </div>

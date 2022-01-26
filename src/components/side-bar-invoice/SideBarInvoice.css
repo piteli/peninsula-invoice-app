@@ -8,7 +8,11 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 20px;
-    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    bottom:0;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .city-postcode-country {
@@ -48,7 +52,7 @@ p {
 }
 
 .three-field-custom-container {
-    width: 107px;
+    width: 112px;
     padding: 10px 5px;
     margin-right: 30px;
 }
@@ -57,10 +61,26 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
 }
 
 .two-field-custom-container {
-    width: 30px;
+    margin-right: 30px;
     padding: 10px 5px;
-    margin-right: 120px;
+}
+
+table {
+    width: 100%;
+    color: var(--input-label-color);
+    padding: 10px;
+    font-size: 10px;
+    font-family: 'spartan-regular';
+}
+
+.add-new-item-btn {
+    width: 100%;
+}
+
+.add-new-item-btn > div {
+    width: 94%;
 }
