@@ -15,6 +15,12 @@
     overflow-x: hidden;
 }
 
+.scroll-view {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .city-postcode-country {
     display: flex;
     flex-direction: row;
@@ -29,6 +35,19 @@
 }
 
 .buttons-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    justify-content: space-around;
+    width: 445px;
+    height: 100px;
+    background-color: var(--side-bar-bg);
+    width: 490px;
+}
+
+.buttons-bottom-two {
     display: flex;
     flex-direction: row;
     align-items: center;
