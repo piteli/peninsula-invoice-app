@@ -8,7 +8,7 @@ import { ItemListDataSourceModel } from './SideBarInvoice.model';
 import ButtonTwoComponent from '../button-two/ButtonTwo.component';
 import ButtonThreeComponent from '../button-three/ButtonThree.component';
 
-function SideBarInvoiceComponent() {
+function SideBarInvoiceComponent(props: any) {
 
     const [dataSourceItemList, setDataSourceItemList] = React.useState<ItemListDataSourceModel[]>([]);
     return(
@@ -59,7 +59,7 @@ function SideBarInvoiceComponent() {
                         }
                     </table>
 
-                    <div className='add-new-item-btn'><ButtonSixComponent /></div>
+                    <div className='add-new-item-btn'><ButtonSixComponent onClick={() => props?.setAddItemModalOpen(true)} /></div>
             </div>
 
             <div className='buttons-bottom'>
