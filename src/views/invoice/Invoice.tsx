@@ -34,7 +34,7 @@ function InvoiceView(props: any) {
                 {
                     props.dataSourceInvoices.map((item: CreateInvoiceInputsModel) => (
                         <ItemListComponent 
-                            columnOne={item.id === '' ? 'id-generated' : item.id}
+                            columnOne={item.id}
                             columnTwo={`${item.invoiceDate.day} 
                                         ${monthsThreeLetter[item.invoiceDate.month]} 
                                         ${item.invoiceDate.year}`}

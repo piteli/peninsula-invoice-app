@@ -16,7 +16,7 @@ export const DEFAULT_CREATE_INVOICE_DATA = {
     projectDesc: "",
     status: 'none',
     total: "0",
-    id: ""
+    id: "id-generated"
 }
 
 export const ALL_FIELDS_REQUIRED = 'Please fill all fields!';
