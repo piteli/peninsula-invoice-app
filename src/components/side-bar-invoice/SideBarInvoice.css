@@ -1,5 +1,4 @@
 .side-bar-invoice-container {
-    height: 100vh;
     width: 450px;
     background-color: var(--dark-theme-side-bar-invoice-bg);
     display: flex;
@@ -11,14 +10,7 @@
     position: fixed;
     top: 0;
     bottom:0;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.scroll-view {
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .city-postcode-country {
@@ -35,7 +27,7 @@
 }
 
 .buttons-bottom {
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     position: fixed;
@@ -44,7 +36,7 @@
     width: 445px;
     height: 100px;
     background-color: var(--side-bar-bg);
-    width: 490px; */
+    width: 490px;
 }
 
 .buttons-bottom-two {
@@ -98,8 +90,29 @@ table {
 
 .add-new-item-btn {
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .add-new-item-btn > div {
     width: 94%;
 }
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--dark-theme-side-bar-invoice-bg);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--side-bar-bg);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--button-action-hover);
+  } 

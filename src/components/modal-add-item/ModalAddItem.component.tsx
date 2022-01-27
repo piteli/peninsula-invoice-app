@@ -30,7 +30,7 @@ function ModalAddItemComponent(props: any) {
     }
 
     return(
-        <div tabIndex={0} className='modal-add-item-container' onBlur={() => props?.setAddItemModalOpen(false)}>
+        <div tabIndex={0} className='modal-add-item-container'>
             <h2>Add Item</h2>
             <FieldTextComponent label="Item Name" onChange={(e: any) => inputOnChange('itemName', e.target.value)} />
             <div className='quantity-price'>
