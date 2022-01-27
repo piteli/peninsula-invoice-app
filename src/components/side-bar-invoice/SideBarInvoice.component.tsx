@@ -58,8 +58,8 @@ function SideBarInvoiceComponent(props: any) {
                             ))
                         }
                     </table>
-
                     <div className='add-new-item-btn'><ButtonSixComponent onClick={() => props?.setAddItemModalOpen(true)} /></div>
+                    <div className='free-space'></div>
             </div>
 
             <div className='buttons-bottom'>
