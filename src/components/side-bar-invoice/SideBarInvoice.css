@@ -11,6 +11,8 @@
     top: 0;
     bottom:0;
     overflow-y: auto;
+    scrollbar-color: var(--side-bar-bg) var(--dark-theme-side-bar-invoice-bg);
+    scrollbar-width: thin;
 }
 
 .city-postcode-country {
