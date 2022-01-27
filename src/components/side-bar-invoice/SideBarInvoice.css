@@ -35,7 +35,7 @@
 }
 
 .buttons-bottom {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
     position: fixed;
@@ -44,7 +44,7 @@
     width: 445px;
     height: 100px;
     background-color: var(--side-bar-bg);
-    width: 490px;
+    width: 490px; */
 }
 
 .buttons-bottom-two {
