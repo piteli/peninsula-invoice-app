@@ -10,7 +10,7 @@ interface selectMenuModel {
 function FieldSelectComponent(props: any) {
 
     const [onSelect, setOnFocusSelect] = React.useState<boolean>(false);
-    const [selectLabel, setSelectLabel] = React.useState<string>(SELECT_OPTION_LABEL[0].label);
+    const [selectLabel, setSelectLabel] = React.useState<string>(props.hasOwnProperty('placeholder') ? props.placeholder : 'Select Payment');
     const [onMouseLeaveState, setOnMouseLeaveState] = React.useState<boolean>(true);
     const dataSource = props.hasOwnProperty('dataSource') ? props.dataSource : SELECT_OPTION_LABEL;
 

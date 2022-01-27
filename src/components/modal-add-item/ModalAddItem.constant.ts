@@ -1,0 +1,1 @@
+export const INPUT_FIELDS_REQUIRED = 'Please fill all fields';

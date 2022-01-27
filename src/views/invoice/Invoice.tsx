@@ -4,6 +4,8 @@ import './Invoice.css';
 import { ReactComponent as IconArrowDown } from '../../assets/icons/icon-arrow-down.svg';
 import ButtonOneComponent from '../../components/button-one/ButtonOne.component';
 import ItemListComponent from '../../components/item-list/ItemList.component';
+import { CreateInvoiceInputsModel } from '../../components/side-bar-invoice/SideBarInvoice.model';
+import { monthsThreeLetter } from '../../components/field-datetimepicker/FieldDatetimepicker.constant';
 
 function InvoiceView(props: any) {
 
@@ -29,10 +31,27 @@ function InvoiceView(props: any) {
                 </div>
             </div>
             <div className='bottom-part'>
-                <ItemListComponent columnFive="Paid" />
-                <ItemListComponent />
-                <ItemListComponent />
-                <ItemListComponent />
+                {
+                    props.dataSourceInvoices.map((item: CreateInvoiceInputsModel) => (
+                        <ItemListComponent 
+                            columnOne={item.id === '' ? 'id-generated' : item.id}
+                            columnTwo={`${item.invoiceDate.day} 
+                                        ${monthsThreeLetter[item.invoiceDate.month]} 
+                                        ${item.invoiceDate.year}`}
+                            columnThree={item.billToClientName}
+                            columnFour={item.total}
+                            columnFive={item.status}
+                        />
+                    ))
+                }
+                {
+                    props.dataSourceInvoice?.length === 0 ?
+                    <div>
+
+                    </div>
+                    :
+                    null
+                }
             </div>
         </div>
     );

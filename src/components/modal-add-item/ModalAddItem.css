@@ -1,13 +1,16 @@
 .modal-add-item-container {
     position: absolute;
-    left: 0;
-    top: 0;
-    background-color: var(--side-bar-bg);
-    height: 800px;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: var(--dark-theme-modal-create-invoice-add-item-bg);
+    height: 600px;
+    width: 800px;
     text-align: center;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .modal-add-item-container > div {
@@ -20,4 +23,18 @@
     align-items: center;
     margin: 0px;
     padding: 0px;
+    margin-bottom: 20px;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-family: 'spartan-regular';
+    cursor: pointer;
+}
+
+h2 {
+    color: white;
+    font-family: 'spartan-bold';
 }
