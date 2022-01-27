@@ -6,6 +6,7 @@ import ButtonOneComponent from '../../components/button-one/ButtonOne.component'
 import ItemListComponent from '../../components/item-list/ItemList.component';
 import { CreateInvoiceInputsModel } from '../../components/side-bar-invoice/SideBarInvoice.model';
 import { monthsThreeLetter } from '../../components/field-datetimepicker/FieldDatetimepicker.constant';
+import { ReactComponent as IconIllustrationEmpty } from '../../assets/icons/illustration-empty.svg';
 
 function InvoiceView(props: any) {
 
@@ -18,7 +19,7 @@ function InvoiceView(props: any) {
             <div className='top-part'>
                 <div className='heading-container'>
                     <h2>{INVOICE_HEADING_LABEL}</h2>
-                    <span>There are 7 total invoice</span>
+                    <span>There are {props.dataSourceInvoices?.length} total invoice</span>
                 </div>
                 <div className='click-container'>
                     <div className='filter-by-status'>
@@ -45,9 +46,11 @@ function InvoiceView(props: any) {
                     ))
                 }
                 {
-                    props.dataSourceInvoice?.length === 0 ?
-                    <div>
-
+                    props.dataSourceInvoices?.length === 0 ?
+                    <div className='placeholder-image-empty-records'>
+                        <IconIllustrationEmpty  />
+                        <h3>There is nothing here</h3>
+                        <h6>Create an invoice by clicking the <br /> <span>New Invoice</span> button and get started</h6>
                     </div>
                     :
                     null
