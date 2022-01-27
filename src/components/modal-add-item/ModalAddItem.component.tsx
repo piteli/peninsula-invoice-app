@@ -3,6 +3,7 @@ import './ModalAddItem.css';
 import FieldTextComponent from '../field-text/FieldText.component';
 import ButtonTwoComponent from '../button-two/ButtonTwo.component';
 import { ItemListDataSourceModel } from '../side-bar-invoice/SideBarInvoice.model';
+import { INPUT_FIELDS_REQUIRED } from './ModalAddItem.constant';
 
 function ModalAddItemComponent(props: any) {
 
@@ -13,10 +14,11 @@ function ModalAddItemComponent(props: any) {
             addItemInputs.itemName === '' ||
             addItemInputs.quantity === 0 ||
             addItemInputs.price === ''){
-            alert('Please fill all fields');
+            alert(INPUT_FIELDS_REQUIRED);
         }
         let newInputs = getNewInputsWithTotal();
         props?.retrieveInputs(newInputs);
+        props?.setAddItemModalOpen(false);
     }
 
     function getNewInputsWithTotal() {
@@ -29,6 +31,10 @@ function ModalAddItemComponent(props: any) {
         setAddItemInputs({...addItemInputs, ...object});
     }
 
+    function cancel() {
+        props?.setAddItemModalOpen(false);
+    }
+
     return(
         <div tabIndex={0} className='modal-add-item-container'>
             <h2>Add Item</h2>
@@ -39,6 +45,8 @@ function ModalAddItemComponent(props: any) {
                 <FieldTextComponent type="number" label="Price" onChange={(e: any) => inputOnChange('price', e.target.value)} />
             </div>
             <ButtonTwoComponent label="Add Item" onClick={addItem} />
+            <br />
+            <button onClick={cancel} className='cancel-btn'>Cancel</button>
         </div>
     );
 }

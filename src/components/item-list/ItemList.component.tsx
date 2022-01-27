@@ -31,7 +31,7 @@ function ItemListComponent(props: any) {
                 <span>{invoicePersonTO}</span>
             </div>
             <div className='column column-four'>
-                <span>{invoiceMoney}</span>
+                <span>RM {invoiceMoney}</span>
             </div>
             <div className='column column-five'>
                 <div className={'status-box ' + invoiceStatus.toLowerCase()}>

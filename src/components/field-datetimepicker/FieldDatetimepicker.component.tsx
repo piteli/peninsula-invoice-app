@@ -5,10 +5,21 @@ import { ReactComponent as IconArrowLeft } from '../../assets/icons/icon-arrow-l
 import { ReactComponent as IconArrowRight } from '../../assets/icons/icon-arrow-right.svg';
 import { JsonCalendar } from 'json-calendar';
 
-interface CurrentStateDateModel {
+const date = new Date();
+const currentToday = date.getDate();
+const currentMonth = date.getMonth();
+const currentYear = date.getFullYear();
+
+export interface CurrentStateDateModel {
     day: number;
     month: number;
     year: number;
+}
+
+export const defaultDateData: CurrentStateDateModel = {
+    day: currentToday,
+    month: currentMonth,
+    year: currentYear
 }
 
 interface monthIndexOperationModel {
@@ -24,10 +35,6 @@ function FieldDatetimepickerComponent(props: any) {
     const [monthIndexStateDate, setMonthIndexStateDate] = React.useState<monthIndexOperationModel>({ monthIndex: 0, year: 0});
     const [onMouseLeaveState, setOnMouseLeaveState] = React.useState<boolean>(true);
     const [dataSourceWeeks, setDataSourceWeeks] = React.useState<any>("");
-    const date = new Date();
-    const currentToday = date.getDate();
-    const currentMonth = date.getMonth();
-    const currentYear = date.getFullYear();
 
     React.useEffect(() => {
         setCurrentStateDate({
@@ -73,6 +80,7 @@ function FieldDatetimepickerComponent(props: any) {
     const dayClicked = (subItem: any) => {
         setSelectLabel(`${subItem.day} ${monthsThreeLetter[subItem.monthIndex]} ${subItem.year}`);
         setCurrentStateDate({day: subItem.day, month: subItem.monthIndex,year: subItem.year});
+        props?.onChange({day: subItem.day, month: subItem.monthIndex,year: subItem.year});
     }
 
     function goPreviousMonth() {

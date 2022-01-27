@@ -90,6 +90,10 @@ table {
     font-family: 'spartan-regular';
 }
 
+table > tr > td {
+    text-align: center;
+}
+
 .add-new-item-btn {
     width: 100%;
     margin-bottom: 100px;

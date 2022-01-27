@@ -44,6 +44,7 @@ code {
   --dark-theme-font-color: #f8f8fb;
 
   --dark-theme-side-bar-invoice-bg: #191c31;
+  --dark-theme-modal-create-invoice-add-item-bg: #191c31;
 }   
 
 .dark-edit-btn {
