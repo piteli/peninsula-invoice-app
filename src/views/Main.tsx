@@ -32,6 +32,7 @@ function MainView() {
     return(
         <div className='top-main-container'>
             <SideBarHomeComponent setDarkTheme={setDarkTheme} isDarkTheme={isDarkTheme} />
+            { isInvoiceMenuOpen ? <div className='backdrop'></div> : null }
             {
                 isInvoiceMenuOpen ?
                     <div className='side-bar-overlay'>
