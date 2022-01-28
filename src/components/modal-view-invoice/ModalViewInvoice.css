@@ -1,0 +1,245 @@
+
+
+.modal-view-invoice-container {
+    position: absolute;
+    margin: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 600px;
+    width: 800px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.back-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'spartan-bold';
+}
+
+.back-btn .icon-arrow-left {
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.top-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--side-bar-bg);
+    border-radius: 10px;    
+    margin-bottom: 20px;
+}
+
+.top-header .left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header .right-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header .right-side div {
+    margin: 0px 20px;
+}
+
+.top-header .left-side > span {
+    font-size: 10px;
+    font-family: 'spartan-regular';
+    margin-right: 20px;
+    color: white;
+}
+
+.bottom-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: var(--side-bar-bg);
+    border-radius: 10px;
+}
+
+.bottom-body .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    color: white;
+    font-family: 'spartan-regular';
+}
+
+.bottom-body .bottom {
+    background-color: #2e3257;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.bottom table {
+    font-family: 'spartan-regular';
+    font-size: 10px;
+    color: white;
+    width: 100%;
+    margin: 30px;
+    margin-bottom: 20px;
+    padding: 0px 25px;
+}
+
+.bottom table tr th {
+    padding-bottom: 20px;
+}
+
+.bottom table tr td {
+    padding-bottom: 20px;
+}
+
+table tr th:nth-child(1) {
+    text-align: left;
+}
+
+table tr td:nth-child(1) {
+    text-align: left;
+}
+
+table tr th:nth-child(3) {
+    text-align: right;
+}
+
+table tr td:nth-child(3) {
+    text-align: right;
+}
+
+table tr th:nth-child(4) {
+    text-align: right;
+}
+
+table tr td:nth-child(4) {
+    text-align: right;
+}
+
+.status-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius : 5px;
+    width: 60px;
+    height: 30px;
+    padding: 2px 10px;
+    font-family: 'spartan-bold';
+    font-size: 10px;
+    margin-right: 20px;
+}
+
+.status-box span {
+    margin: 0px;
+    padding: 0px;
+}
+
+.paid {
+ background-color: rgba(48, 191, 146, 0.1);
+}
+
+.paid span {
+    color: #30bf92;
+}
+
+.pending {
+    background-color: rgba(207, 120, 12, 0.1);
+    color: #cf780c;
+}
+
+.pending span {
+    color: #cf780c;
+}
+
+.draft {
+    background-color: rgba(189, 193, 215, 0.1);
+    color: #bdc1d7
+}
+
+.draft span {
+    color: #bdc1d7;
+}
+
+.amount-total {
+    background: #000;
+    height:70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.amount-total :first-child {
+    font-size: 10px;
+}
+
+.amount-total span {
+    color: white;
+    font-family: 'spartan-medium';
+    margin: 0px 20px;
+}
+
+.up-panel {
+    width: 100%;
+}
+
+.down-panel {
+
+}
+
+.bill-to-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bill-to-detail .designation {
+    text-align: left;
+    font-size: 12px;
+}
+
+.bill-to-detail .address {
+    font-size: 10px;
+    text-align: right;
+}
+
+.general-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    font-size: 10px;
+    font-family: 'spartan-regular';
+}
+
+.bold-text {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 25px;
+}

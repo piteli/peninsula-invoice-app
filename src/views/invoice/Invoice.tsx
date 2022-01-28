@@ -1,5 +1,5 @@
 import React from 'react';
-import { INVOICE_HEADING_LABEL } from './Invoice.constant';
+import { EMPTY_LABEL_ONE, INVOICE_HEADING_LABEL } from './Invoice.constant';
 import './Invoice.css';
 import { ReactComponent as IconArrowDown } from '../../assets/icons/icon-arrow-down.svg';
 import ButtonOneComponent from '../../components/button-one/ButtonOne.component';
@@ -7,6 +7,8 @@ import ItemListComponent from '../../components/item-list/ItemList.component';
 import { CreateInvoiceInputsModel } from '../../components/side-bar-invoice/SideBarInvoice.model';
 import { monthsThreeLetter } from '../../components/field-datetimepicker/FieldDatetimepicker.constant';
 import { ReactComponent as IconIllustrationEmpty } from '../../assets/icons/illustration-empty.svg';
+
+// const dummy = 
 
 function InvoiceView(props: any) {
 
@@ -49,7 +51,7 @@ function InvoiceView(props: any) {
                     props.dataSourceInvoices?.length === 0 ?
                     <div className='placeholder-image-empty-records'>
                         <IconIllustrationEmpty  />
-                        <h3>There is nothing here</h3>
+                        <h3>{EMPTY_LABEL_ONE}</h3>
                         <h6>Create an invoice by clicking the <br /> <span>New Invoice</span> button and get started</h6>
                     </div>
                     :
