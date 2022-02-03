@@ -5,3 +5,4 @@ export const SELECT_OPTION_LABEL = [
     { label: 'Net 14 Days', value: "14"},
     { label: 'Net 30 Days', value: "30" },
 ];
+export const NET_IN_DAYS = 'Net %VALUE% Day';

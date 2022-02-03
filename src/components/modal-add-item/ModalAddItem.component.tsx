@@ -7,12 +7,12 @@ import { INPUT_FIELDS_REQUIRED } from './ModalAddItem.constant';
 
 function ModalAddItemComponent(props: any) {
 
-    const [addItemInputs, setAddItemInputs] = React.useState<ItemListDataSourceModel>({itemName: '', quantity: 0, price: '', total: ''});
+    const [addItemInputs, setAddItemInputs] = React.useState<ItemListDataSourceModel>({itemName: '', quantity: '', price: '', total: ''});
 
     function addItem() {
         if(
             addItemInputs.itemName === '' ||
-            addItemInputs.quantity === 0 ||
+            addItemInputs.quantity === '' ||
             addItemInputs.price === ''){
             alert(INPUT_FIELDS_REQUIRED);
         }
@@ -22,7 +22,7 @@ function ModalAddItemComponent(props: any) {
     }
 
     function getNewInputsWithTotal() {
-        return {...addItemInputs , ...{total : (parseInt(addItemInputs.price) * addItemInputs.quantity).toString()}}
+        return {...addItemInputs , ...{total : (parseInt(addItemInputs.price) * parseInt(addItemInputs.quantity)).toString()}}
     }
 
     function inputOnChange(key: string, value: string) {

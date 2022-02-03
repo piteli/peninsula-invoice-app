@@ -16,6 +16,10 @@ function InvoiceView(props: any) {
         props?.setInvoiceMenuOpen(!props?.isInvoiceMenuOpen);
     }
 
+    function onClickItem(invoiceData: CreateInvoiceInputsModel) {
+        props.setInvoiceDetailView(invoiceData);
+    }
+
     return (
         <div className='invoice-container'>
             <div className='top-part'>
@@ -44,6 +48,8 @@ function InvoiceView(props: any) {
                             columnThree={item.billToClientName}
                             columnFour={item.total}
                             columnFive={item.status}
+                            invoiceData={item}
+                            onClick={onClickItem}
                         />
                     ))
                 }

@@ -57,6 +57,13 @@ function FieldDatetimepickerComponent(props: any) {
     React.useEffect(() => {
     }, [dataSourceWeeks])
 
+    React.useEffect(() => {
+        if(props.value.year !== 0) {
+            setSelectLabel(`${props.value.day} ${monthsThreeLetter[props.value.month]} ${props.value.year}`);
+            setCurrentStateDate({day: props.value.day, month: props.value.month,year: props.value.year});
+        }
+    }, [props.value]);
+
     function onBlurSelect() {
         setOnFocusSelect(false);
     }

@@ -19,8 +19,14 @@ function ItemListComponent(props: any) {
                         props.columnFour : INVOICE_MONEY;
     const invoiceStatus = props.hasOwnProperty('columnFive') ?
                         props.columnFive : INVOICE_STATUS;
+    const invoiceData = props.invoiceData;
+
+    function onClick() {
+        props.onClick(invoiceData);
+    }
+
     return(
-        <div className='item-list-container' onClick={props?.onClick}>
+        <div className='item-list-container' onClick={onClick}>
             <div className='column column-one'>
                 <span>{invoiceId}</span>
             </div>
