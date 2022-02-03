@@ -1,6 +1,6 @@
-.button-container {
+.button-two-container {
     border-radius: 50px;
-    background-color: #7C5DFA;
+    background-color: var(--button-action-bg);
     height: 30px;
     width: 120px;
     display: flex;
@@ -11,12 +11,13 @@
     cursor: pointer;
 }
 
-.button-container:hover {
-    background-color: #9277FF;
+.button-two-container:hover {
+    background-color: var(--button-action-hover);
 } 
 
-.button-text {
+.button-two-text {
     font-size: 13px;
     color: white;
     font-family: 'spartan-semi-bold';
+    margin: 0px;
 }

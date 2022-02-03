@@ -3,10 +3,11 @@ import { BUTTON_LABEL } from './ButtonFour.constant';
 import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 function ButtonFourComponent(props: any) {
+    const isDarkTheme = props.isDarkTheme;
     return (
-        <div className={isDarkThemeWithExtraClass('draft', ['parent-container'])}>
-            <div className='button-container' onClick={props?.onClick}>
-                <span className='button-text'>
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['button-four','parent-four-container'])}>
+            <div className='button-four-container' onClick={props?.onClick}>
+                <span className='button-four-text'>
                     {props.hasOwnProperty('label') ? props.label : BUTTON_LABEL}
                 </span>
             </div>

@@ -14,14 +14,17 @@ function SideBarHomeComponent(props: any) {
                 </div>
             </div>
             <div className='profile-container'>
-                <div className='dark-light-button'>
+                
                     {
-                        props?.isDarkTheme ? 
-                        <IconSun onClick={() => props?.setDarkTheme(true)} />
+                        props.isDarkTheme ? 
+                        <div onClick={() => props.setDarkTheme(false)} className='dark-light-button'>
+                            <IconSun  />
+                        </div>
                         :
-                        <IconMoon onClick={() => props?.setDarkTheme(false)} />
+                        <div onClick={() => props.setDarkTheme(true)} className='dark-light-button'>
+                            <IconMoon  />
+                        </div>
                     }
-                </div>
                 <div className='divider'></div>
                 <img className='avatar' src={require('../../assets/icons/image-avatar.jpg')} />
             </div>

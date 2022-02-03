@@ -9,10 +9,12 @@ import { monthsThreeLetter } from '../field-datetimepicker/FieldDatetimepicker.c
 import { CreateInvoiceInputsModel } from '../side-bar-invoice/SideBarInvoice.model';
 import ApiService from '../../services/Api.service';
 import { AUTHENTICATION_TYPE } from '../../utils/constants/http.constant';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 function ModalViewInvoiceComponent(props: any) {
     const invoice = props.invoiceDetailView;
-    const totalItemsPrice = invoice.addItems.reduce((n: any, {total}: CreateInvoiceInputsModel) => n + total, 0);
+    const totalItemsPrice = invoice.total;
+    const isDarkTheme = props.isDarkTheme;
 
     function toCamelCase(label: string) {
         return label.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match: any, index: any) {
@@ -22,6 +24,7 @@ function ModalViewInvoiceComponent(props: any) {
     }
 
     function goBack() {
+        props.setAddItemsData([]);
         props.setInvoiceViewModalOpen(false);
     }
 
@@ -31,6 +34,7 @@ function ModalViewInvoiceComponent(props: any) {
     }
 
     function openEditInvoiceSidebar() {
+        props.setAddItemsData(invoice.addItems);
         props.setInvoiceMenuOpen(true);
         props.mergeViewDetailWithFormInputs();
     }
@@ -54,7 +58,7 @@ function ModalViewInvoiceComponent(props: any) {
     }
       
     return(
-        <div tabIndex={0} className='modal-view-invoice-container'>
+        <div tabIndex={0} className={isDarkThemeWithExtraClass(isDarkTheme, ['modal-view-invoice-container'])}>
             <div className='back-btn' onClick={goBack}>
                 <div className="icon-arrow-left"><IconLeftArrow /></div>
                 <span>{GO_BACK}</span>
@@ -75,13 +79,7 @@ function ModalViewInvoiceComponent(props: any) {
                         :
                         null
                     }
-                    {
-                        (invoice.status).toLowerCase() !== 'paid' ?
-
-                        <ButtonFiveComponent onClick={openDeleteModal} />
-                        :
-                        null
-                    }
+                    <ButtonFiveComponent onClick={openDeleteModal} />
                     {
                         (invoice.status).toLowerCase() === 'pending' ?
                         <ButtonTwoComponent onClick={saveAsPaid} />

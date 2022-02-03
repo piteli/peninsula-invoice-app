@@ -1,6 +1,7 @@
 import React from 'react';
 import './FieldSelect.css';
 import { INPUT_LABEL, SELECT_OPTION_LABEL, NET_IN_DAYS } from './FieldSelect.constant';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 interface selectMenuModel {
     label: string;
@@ -13,6 +14,7 @@ function FieldSelectComponent(props: any) {
     const [selectLabel, setSelectLabel] = React.useState<string>(props.hasOwnProperty('placeholder') ? props.placeholder : 'Select Payment');
     const [onMouseLeaveState, setOnMouseLeaveState] = React.useState<boolean>(true);
     const dataSource = SELECT_OPTION_LABEL;
+    const isDarkTheme = props.isDarkTheme;
 
     function onBlurSelect() {
         setOnFocusSelect(false);
@@ -37,7 +39,7 @@ function FieldSelectComponent(props: any) {
     }
 
     return(
-        <div className='select-input-container'>
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['select-input-container'])}>
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
                 <div tabIndex={0} className='select-container' onBlur={onBlurSelect} onClick={onClickSelect}>
                     <div className={(onSelect ? 'select-clicked' : '') + ' select'}>

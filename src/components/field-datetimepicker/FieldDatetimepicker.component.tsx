@@ -4,6 +4,7 @@ import { INPUT_LABEL, monthsThreeLetter } from './FieldDatetimepicker.constant';
 import { ReactComponent as IconArrowLeft } from '../../assets/icons/icon-arrow-left.svg';
 import { ReactComponent as IconArrowRight } from '../../assets/icons/icon-arrow-right.svg';
 import { JsonCalendar } from 'json-calendar';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 const date = new Date();
 const currentToday = date.getDate();
@@ -31,10 +32,12 @@ function FieldDatetimepickerComponent(props: any) {
 
     const [onSelect, setOnFocusSelect] = React.useState<boolean>(false);
     const [selectLabel, setSelectLabel] = React.useState<string>("");
+    const [monthChanger, setMonthChanger] = React.useState<string>(`${monthsThreeLetter[currentMonth]} ${currentYear}`);
     const [currentStateDate, setCurrentStateDate] = React.useState<CurrentStateDateModel>({day: 0, month: 0, year: 0});
     const [monthIndexStateDate, setMonthIndexStateDate] = React.useState<monthIndexOperationModel>({ monthIndex: 0, year: 0});
     const [onMouseLeaveState, setOnMouseLeaveState] = React.useState<boolean>(true);
     const [dataSourceWeeks, setDataSourceWeeks] = React.useState<any>("");
+    const isDarkTheme = props.isDarkTheme;
 
     React.useEffect(() => {
         setCurrentStateDate({
@@ -85,6 +88,7 @@ function FieldDatetimepickerComponent(props: any) {
     }
 
     const dayClicked = (subItem: any) => {
+        setMonthChanger(`${monthsThreeLetter[subItem.monthIndex]} ${subItem.year}`);
         setSelectLabel(`${subItem.day} ${monthsThreeLetter[subItem.monthIndex]} ${subItem.year}`);
         setCurrentStateDate({day: subItem.day, month: subItem.monthIndex,year: subItem.year});
         props?.onChange({day: subItem.day, month: subItem.monthIndex,year: subItem.year});
@@ -92,17 +96,21 @@ function FieldDatetimepickerComponent(props: any) {
 
     function goPreviousMonth() {
         if(monthIndexStateDate.monthIndex === 0) {
+            setMonthChanger(`${monthsThreeLetter[11]} ${monthIndexStateDate.year - 1}`);
             setMonthIndexStateDate({monthIndex: 11, year: monthIndexStateDate.year - 1});
             return;
         }
+        setMonthChanger(`${monthsThreeLetter[monthIndexStateDate.monthIndex - 1]} ${monthIndexStateDate.year}`);
         setMonthIndexStateDate({monthIndex: monthIndexStateDate.monthIndex - 1, year: monthIndexStateDate.year}); 
     }
 
     function goNextMonth() {
         if(monthIndexStateDate.monthIndex === 11) {
+            setMonthChanger(`${monthsThreeLetter[0]} ${monthIndexStateDate.year + 1}`);
             setMonthIndexStateDate({monthIndex: 0, year: monthIndexStateDate.year + 1});
             return;
         }
+        setMonthChanger(`${monthsThreeLetter[monthIndexStateDate.monthIndex + 1]} ${monthIndexStateDate.year}`);
         setMonthIndexStateDate({monthIndex: monthIndexStateDate.monthIndex + 1, year: monthIndexStateDate.year}); 
     }
 
@@ -115,7 +123,7 @@ function FieldDatetimepickerComponent(props: any) {
     }
 
     return(
-        <div className='input-datetime-container'>
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['input-datetime-container'])}>
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
                 <div tabIndex={0} className='datetime-container' onBlur={onBlurSelect} onClick={onClickSelect}>
                     <div className={(onSelect ? 'datetime-select-clicked' : '') + ' datetime'}>
@@ -129,7 +137,7 @@ function FieldDatetimepickerComponent(props: any) {
                     <div className='datepicker-modal-container'  onMouseEnter={onMouseEnterChange} onMouseLeave={onMouseLeaveChange}>
                         <div className='top-modal-body'>
                             <div className='arrow' onClick={goPreviousMonth}><IconArrowLeft /></div>
-                            <div className='month-year-changer'>{`${monthsThreeLetter[monthIndexStateDate.monthIndex]} ${monthIndexStateDate.year}`}</div>
+                            <div className='month-year-changer'>{monthChanger}</div>
                             <div className='arrow' onClick={goNextMonth}><IconArrowRight /></div>
                         </div>
                         <table className='bottom-modal-body'>

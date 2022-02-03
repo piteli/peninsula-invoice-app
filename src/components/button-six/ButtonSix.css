@@ -1,6 +1,6 @@
-.button-container {
+.button-six-container {
     border-radius: 50px;
-    background-color: #F8F8FB;
+    background-color: var(--button-add-new-item-bg);
     height: 30px;
     width: 300px;
     display: flex;
@@ -11,14 +11,14 @@
     cursor: pointer;
 }
 
-.button-container:hover {
-    background-color: #DFE3FA;
+.button-six-container:hover {
+    background-color: var(--button-add-new-item-hover);
 } 
 
-.button-text {
+.button-six-text {
     font-size: 13px;
     color: #7E88C3;
     font-family: 'spartan-semi-bold';
     padding-bottom: 0px;
-    margin-bottom: 0px;
+    margin: 0px;
 }

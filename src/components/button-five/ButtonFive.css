@@ -1,4 +1,4 @@
-.button-container {
+.button-five-container {
     border-radius: 50px;
     background-color: var(--button-delete-bg);
     height: 30px;
@@ -11,12 +11,13 @@
     cursor: pointer;
 }
 
-.button-container:hover {
+.button-five-container:hover {
     background-color: var(--button-delete-hover);
 } 
 
-.button-text {
+.button-five-text {
     font-size: 13px;
     color: white;
     font-family: 'spartan-semi-bold';
+    margin: 0px;
 }

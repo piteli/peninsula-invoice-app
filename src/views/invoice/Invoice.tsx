@@ -7,10 +7,13 @@ import ItemListComponent from '../../components/item-list/ItemList.component';
 import { CreateInvoiceInputsModel } from '../../components/side-bar-invoice/SideBarInvoice.model';
 import { monthsThreeLetter } from '../../components/field-datetimepicker/FieldDatetimepicker.constant';
 import { ReactComponent as IconIllustrationEmpty } from '../../assets/icons/illustration-empty.svg';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 // const dummy = 
 
 function InvoiceView(props: any) {
+
+    const isDarkTheme = props.isDarkTheme;
 
     function createNewInvoice() {
         props?.setInvoiceMenuOpen(!props?.isInvoiceMenuOpen);
@@ -21,7 +24,7 @@ function InvoiceView(props: any) {
     }
 
     return (
-        <div className='invoice-container'>
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['invoice-container'])}>
             <div className='top-part'>
                 <div className='heading-container'>
                     <h2>{INVOICE_HEADING_LABEL}</h2>
@@ -50,6 +53,7 @@ function InvoiceView(props: any) {
                             columnFive={item.status}
                             invoiceData={item}
                             onClick={onClickItem}
+                            isDarkTheme={isDarkTheme}
                         />
                     ))
                 }

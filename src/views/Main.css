@@ -1,7 +1,6 @@
 .top-main-container {
     display: flex;
     flex-direction: row;
-    background-color: var(--dark-theme-body-bg);
 }
 
 .content {
@@ -18,11 +17,6 @@
     animation: ease-out;
     animation-name: run;
     animation-duration: 0.1s;
-}
-
-input {
-    background-color: var(--side-bar-bg);
-    color: white;
 }
 
 @keyframes run {

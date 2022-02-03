@@ -4,9 +4,9 @@ import { BUTTON_LABEL } from './ButtonOne.constant';
 
 function ButtonOneComponent(props: any) {
     return (
-        <div className='button-container' onClick={props?.onClick}>
-            <div className='button-icon'><IconPlus fill={"#7C5DFA"} /></div>
-            <span className='button-text'>
+        <div className='button-one-container' onClick={props?.onClick}>
+            <div className='button-one-icon'><IconPlus fill={"#7C5DFA"} /></div>
+            <span className='button-one-text'>
                 {props.hasOwnProperty('label') ? props.label : BUTTON_LABEL}
             </span>
         </div>

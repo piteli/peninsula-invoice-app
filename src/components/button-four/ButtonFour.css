@@ -1,9 +1,9 @@
-.parent-container {
+.parent-four-container {
     width: 140px;
     border-radius: 50px;    
 }
 
-.button-container {
+.button-four-container {
     border-radius: 50px;
     height: 30px;
     width: 120px;
@@ -15,7 +15,8 @@
     cursor: pointer;
 }
 
-.button-text {
+.button-four-text {
     font-size: 13px;
     font-family: 'spartan-semi-bold';
+    margin: 0px;
 }

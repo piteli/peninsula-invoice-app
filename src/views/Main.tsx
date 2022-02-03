@@ -10,18 +10,19 @@ import ApiService from '../services/Api.service';
 import { AUTHENTICATION_TYPE } from '../utils/constants/http.constant';
 import ModalDeleteInvoiceComponent from '../components/modal-delete-invoice/ModalDeleteInvoice.component';
 import { DEFAULT_CREATE_INVOICE_DATA } from '../components/side-bar-invoice/SideBarInvoice.constant';
+import { isDarkThemeWithExtraClass } from '../utils/helper/theme.helper';
 
 function MainView() {
-    const [isDarkTheme, setDarkTheme] = React.useState<boolean>(true);
+    const [isDarkTheme, setDarkTheme] = React.useState<boolean>(false);
     const [isInvoiceMenuOpen, setInvoiceMenuOpen] = React.useState<boolean>(false);
     const [isAddItemModalOpen, setAddItemModalOpen] = React.useState<boolean>(false);
     const [isInvoiceViewModalOpen, setInvoiceViewModalOpen] = React.useState<boolean>(false);
     const [dataSourceInvoices, setDataSourceInvoices] = React.useState<CreateInvoiceInputsModel[]>([]);
-    const [addItemsData, setAddItemsData] = React.useState<ItemListDataSourceModel[]>([]);
     const [invoiceDetailView, setInvoiceDetailView] = React.useState<CreateInvoiceInputsModel>();
     const [isInvoiceDeleteModalOpen, setInvoiceDeleteModalOpen] = React.useState<boolean>(false);
     const [holdDeleteInvoiceId, setDeleteInvoiceId] = React.useState<string>('');
     const [inputs, setInputs] = React.useState<CreateInvoiceInputsModel>(DEFAULT_CREATE_INVOICE_DATA);
+    const [addItemsData, setAddItemsData] = React.useState<any>([]);
 
     React.useEffect(() => {
         loadInvoiceDataFromAPI();
@@ -34,9 +35,9 @@ function MainView() {
     }, [invoiceDetailView]);
 
     function retrieveInputsFromModal(value: ItemListDataSourceModel) {
-        let addItems = addItemsData;
-        addItems.push(value);
-        setAddItemsData(addItems);
+        let newInputsAddItems = addItemsData;
+        newInputsAddItems.push(value);
+        setAddItemsData(newInputsAddItems);
     }
 
     function saveCreatedInvoiceToMainView(payload: CreateInvoiceInputsModel) {
@@ -115,14 +116,15 @@ function MainView() {
             setDataSourceInvoices(invoices);
             setInvoiceDeleteModalOpen(false);
             setInvoiceViewModalOpen(false);
+            setAddItemsData([]);
         } catch(e) {
             console.log(e);
         }
     }
 
     return(
-        <div className='top-main-container'>
-            <SideBarHomeComponent setDarkTheme={setDarkTheme} isDarkT heme={isDarkTheme} />
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['top-main-container'])}>
+            <SideBarHomeComponent setDarkTheme={setDarkTheme} isDarkTheme={isDarkTheme} />
             { isInvoiceMenuOpen || isInvoiceViewModalOpen ? <div className='backdrop'></div> : null }
             {
                 isInvoiceViewModalOpen ?
@@ -137,6 +139,8 @@ function MainView() {
                             mergeViewDetailWithFormInputs={mergeViewDetailWithFormInputs}
                             dataSourceInvoices={dataSourceInvoices}
                             setDataSourceInvoices={setDataSourceInvoices}
+                            isDarkTheme={isDarkTheme}
+                            setAddItemsData={setAddItemsData}
                         />
                     </div>
                     :
@@ -146,6 +150,8 @@ function MainView() {
                 isInvoiceDeleteModalOpen?
                 <ModalDeleteInvoiceComponent 
                     deleteInvoice={deleteInvoice}
+                    isDarkTheme={isDarkTheme}
+                    setInvoiceDeleteModalOpen={setInvoiceDeleteModalOpen}
                 />
                 :
                 null
@@ -154,7 +160,6 @@ function MainView() {
                 isInvoiceMenuOpen ?
                     <div className='side-bar-overlay'>
                         <SideBarInvoiceComponent 
-                            addItemsData={addItemsData} 
                             setInvoiceMenuOpen={setInvoiceMenuOpen} 
                             setAddItemModalOpen={setAddItemModalOpen}
                             saveCreatedInvoiceToMainView={saveCreatedInvoiceToMainView} 
@@ -163,6 +168,8 @@ function MainView() {
                             setDataSourceInvoices={setDataSourceInvoices}
                             dataSourceInvoices={dataSourceInvoices}
                             setInvoiceDetailView={setInvoiceDetailView}
+                            isDarkTheme={isDarkTheme}
+                            addItemsData={addItemsData}
                         />
                     </div>
                     :
@@ -173,6 +180,7 @@ function MainView() {
                 <ModalAddItemComponent 
                     setAddItemModalOpen={setAddItemModalOpen} 
                     retrieveInputs={retrieveInputsFromModal} 
+                    isDarkTheme={isDarkTheme}
                 /> : null
             }
             <div className='content'>
@@ -181,6 +189,7 @@ function MainView() {
                     isInvoiceMenuOpen={isInvoiceMenuOpen} 
                     setInvoiceMenuOpen={setInvoiceMenuOpen} 
                     setInvoiceDetailView={setInvoiceDetailView}
+                    isDarkTheme={isDarkTheme}
                 />
             </div>
         </div>

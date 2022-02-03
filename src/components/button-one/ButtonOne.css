@@ -1,4 +1,4 @@
-.button-container {
+.button-one-container {
     border-radius: 50px;
     background-color: var(--button-action-bg);
     height: 30px;
@@ -11,11 +11,11 @@
     cursor: pointer;
 }
 
-.button-container:hover {
+.button-one-container:hover {
     background-color: var(--button-action-hover);
 } 
 
-.button-icon {
+.button-one-icon {
     border-radius: 50px;
     width: 30px;
     height: 30px;
@@ -25,9 +25,10 @@
     align-items: center;
 }
 
-.button-text {
+.button-one-text {
     font-size: 13px;
     color: white;
     font-family: 'spartan-semi-bold';
     padding-right: 5px;
+    margin: 0px;
 }

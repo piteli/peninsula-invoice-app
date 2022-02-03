@@ -37,7 +37,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: var(--side-bar-bg);
     border-radius: 10px;    
     margin-bottom: 20px;
 }
@@ -64,7 +63,6 @@
     font-size: 10px;
     font-family: 'spartan-regular';
     margin-right: 20px;
-    color: white;
 }
 
 .bottom-body {
@@ -82,7 +80,6 @@
     align-items: center;
     padding: 20px;
     width: 90%;
-    color: white;
     font-family: 'spartan-regular';
 }
 
