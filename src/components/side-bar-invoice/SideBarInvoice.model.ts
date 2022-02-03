@@ -2,7 +2,7 @@ import { CurrentStateDateModel } from '../field-datetimepicker/FieldDatetimepick
 
 export interface ItemListDataSourceModel {
     itemName: string;
-    quantity: number;
+    quantity: string;
     price: string;
     total: string
 }
@@ -11,7 +11,7 @@ export interface CreateInvoiceInputsModel {
     id?: string;
     billFromStreetAddress: string;
     billFromCity: string;
-    billFromPostcode: number;
+    billFromPostcode: string;
     billFromCountry: string;
     billToClientName: string;
     billToClientEmail: string;
@@ -25,4 +25,5 @@ export interface CreateInvoiceInputsModel {
     addItems?: ItemListDataSourceModel[];
     status: string;
     total: string;
+    paymentDue: CurrentStateDateModel;
 }

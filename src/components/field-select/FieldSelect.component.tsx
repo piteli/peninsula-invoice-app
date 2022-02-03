@@ -1,6 +1,6 @@
 import React from 'react';
 import './FieldSelect.css';
-import { INPUT_LABEL, SELECT_OPTION_LABEL } from './FieldSelect.constant';
+import { INPUT_LABEL, SELECT_OPTION_LABEL, NET_IN_DAYS } from './FieldSelect.constant';
 
 interface selectMenuModel {
     label: string;
@@ -12,7 +12,7 @@ function FieldSelectComponent(props: any) {
     const [onSelect, setOnFocusSelect] = React.useState<boolean>(false);
     const [selectLabel, setSelectLabel] = React.useState<string>(props.hasOwnProperty('placeholder') ? props.placeholder : 'Select Payment');
     const [onMouseLeaveState, setOnMouseLeaveState] = React.useState<boolean>(true);
-    const dataSource = props.hasOwnProperty('dataSource') ? props.dataSource : SELECT_OPTION_LABEL;
+    const dataSource = SELECT_OPTION_LABEL;
 
     function onBlurSelect() {
         setOnFocusSelect(false);
@@ -41,7 +41,7 @@ function FieldSelectComponent(props: any) {
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
                 <div tabIndex={0} className='select-container' onBlur={onBlurSelect} onClick={onClickSelect}>
                     <div className={(onSelect ? 'select-clicked' : '') + ' select'}>
-                        {selectLabel}
+                        {props.value !== '' ? (NET_IN_DAYS.replace('%VALUE%', props.value) + (parseInt(props.value) > 1 ? 's' : '')) : selectLabel}
                     </div>
                 </div>
 

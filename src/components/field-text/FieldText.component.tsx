@@ -5,7 +5,7 @@ function FieldTextComponent(props: any) {
     return(
         <div className='input-container'>
             <span>{props.hasOwnProperty('label') ? props.label : INPUT_LABEL}</span>
-            <input type={props?.type} onChange={props.onChange} />
+            <input type={props?.type} onChange={props.onChange} value={props?.value} />
         </div>
     );
 }
