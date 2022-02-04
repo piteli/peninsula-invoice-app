@@ -4,7 +4,7 @@ export interface ItemListDataSourceModel {
     itemName: string;
     quantity: string;
     price: string;
-    total: string
+    total: string;
 }
 
 export interface CreateInvoiceInputsModel {

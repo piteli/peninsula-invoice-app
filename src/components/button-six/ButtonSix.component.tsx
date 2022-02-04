@@ -4,9 +4,9 @@ import { ReactComponent as IconPlus } from '../../assets/icons/icon-plus.svg';
 
 function ButtonSixComponent(props: any) {
     return (
-        <div className='button-container' onClick={props?.onClick}>
+        <div className='button-six-container' onClick={props?.onClick}>
             <IconPlus fill={'#7E88C3'} />
-            <span className='button-text'>
+            <span className='button-six-text'>
                 {props.hasOwnProperty('label') ? props.label : BUTTON_LABEL}
             </span>
         </div>

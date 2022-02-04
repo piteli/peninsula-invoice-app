@@ -7,6 +7,7 @@ import {
 } from './ItemList.constant';
 import './ItemList.css';
 import { ReactComponent as IconArrowRight } from '../../assets/icons/icon-arrow-right.svg';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 function ItemListComponent(props: any) {
     const invoiceId = props.hasOwnProperty('columnOne') ?
@@ -20,13 +21,14 @@ function ItemListComponent(props: any) {
     const invoiceStatus = props.hasOwnProperty('columnFive') ?
                         props.columnFive : INVOICE_STATUS;
     const invoiceData = props.invoiceData;
+    const isDarkTheme = props.isDarkTheme;
 
     function onClick() {
         props.onClick(invoiceData);
     }
 
     return(
-        <div className='item-list-container' onClick={onClick}>
+        <div className={isDarkThemeWithExtraClass(isDarkTheme, ['item-list-container'])} onClick={onClick}>
             <div className='column column-one'>
                 <span>{invoiceId}</span>
             </div>

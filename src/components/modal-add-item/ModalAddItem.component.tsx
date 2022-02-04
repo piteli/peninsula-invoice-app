@@ -4,9 +4,11 @@ import FieldTextComponent from '../field-text/FieldText.component';
 import ButtonTwoComponent from '../button-two/ButtonTwo.component';
 import { ItemListDataSourceModel } from '../side-bar-invoice/SideBarInvoice.model';
 import { INPUT_FIELDS_REQUIRED } from './ModalAddItem.constant';
+import { isDarkThemeWithExtraClass } from '../../utils/helper/theme.helper';
 
 function ModalAddItemComponent(props: any) {
 
+    const isDarkTheme = props.isDarkTheme;
     const [addItemInputs, setAddItemInputs] = React.useState<ItemListDataSourceModel>({itemName: '', quantity: '', price: '', total: ''});
 
     function addItem() {
@@ -17,8 +19,8 @@ function ModalAddItemComponent(props: any) {
             alert(INPUT_FIELDS_REQUIRED);
         }
         let newInputs = getNewInputsWithTotal();
-        props?.retrieveInputs(newInputs);
-        props?.setAddItemModalOpen(false);
+        props.retrieveInputs(newInputs);
+        props.setAddItemModalOpen(false);
     }
 
     function getNewInputsWithTotal() {
@@ -36,16 +38,15 @@ function ModalAddItemComponent(props: any) {
     }
 
     return(
-        <div tabIndex={0} className='modal-add-item-container'>
+        <div tabIndex={0} className={isDarkThemeWithExtraClass(isDarkTheme, ['modal-add-item-container'])}>
             <h2>Add Item</h2>
-            <FieldTextComponent label="Item Name" onChange={(e: any) => inputOnChange('itemName', e.target.value)} />
+            <FieldTextComponent isDarkTheme={isDarkTheme} label="Item Name" onChange={(e: any) => inputOnChange('itemName', e.target.value)} />
             <div className='quantity-price'>
-                <FieldTextComponent type="number" label="Quantity" onChange={(e: any) => inputOnChange('quantity', e.target.value)} />
+                <FieldTextComponent isDarkTheme={isDarkTheme} type="number" label="Quantity" onChange={(e: any) => inputOnChange('quantity', e.target.value)} />
                     <div style={{width: 50}}></div>
-                <FieldTextComponent type="number" label="Price" onChange={(e: any) => inputOnChange('price', e.target.value)} />
+                <FieldTextComponent isDarkTheme={isDarkTheme} type="number" label="Price" onChange={(e: any) => inputOnChange('price', e.target.value)} />
             </div>
-            <ButtonTwoComponent label="Add Item" onClick={addItem} />
-            <br />
+            <ButtonTwoComponent isDarkTheme={isDarkTheme} label="Add Item" onClick={addItem} />
             <button onClick={cancel} className='cancel-btn'>Cancel</button>
         </div>
     );

@@ -30,13 +30,52 @@ code {
   --light-theme-color-text-draft-btn: #7E88C3; 
 
   --button-action-bg: #7C5DFA;
-  --button-action-hover: #9277FF;
+  --button-action-hover: #9277FF; 
 
   --button-delete-bg: #EC5757;
   --button-delete-hover: #FF9796;
 
-  --input-label-color: #838dc5;
-  --input-field-border-color: rgba(131, 141, 197, 0.5);
+  --button-add-new-item-bg: #F8F8FB;
+  --button-add-new-item-hover: #DFE3FA;
+
+  --dark-input-label-color: rgba(255, 255, 255, 0.8);
+  --dark-input-field-border-color: rgba(131, 141, 197, 0.5);
+  --dark-input-field-bg: #252945;
+  --light-input-label-color: #838dc5;
+  --light-input-field-border-color: rgba(131, 141, 197, 0.5);
+  --light-input-field-bg: white;
+  --input-field-outline-caret-color: #9277FF; 
+
+  --dark-select-label-color: rgba(255, 255, 255, 0.8);
+  --dark-select-border: rgba(131, 141, 197, 0.5);
+  --dark-select-outline: #9277FF;
+  --dark-select-caret: #9277FF;
+  --dark-select-bg: #252945;
+  --dark-select-options-bg: #252945;;
+  --light-select-label-color: #838dc5;
+  --light-select-border: rgba(131, 141, 197, 0.5);
+  --light-select-outline: #9277FF;
+  --light-select-caret: #9277FF;
+  --light-select-bg: white;
+  --light-select-options-bg: white;
+  --select-clicked-border: #9277FF;
+  --select-hover-border: #9277FF;
+  --select-option-hover: #9277FF;
+
+  --dark-datetime-label-color: rgba(255, 255, 255, 0.8);
+  --dark-datetime-border-color: rgba(131, 141, 197, 0.5);
+  --dark-datetime-outline-color: #9277FF;
+  --dark-datetime-caret-color: #9277FF;
+  --dark-datetime-background-color: #252945;
+  --dark-datetime-modal-bg-color: #252945;
+  --dark-datetime-modal-week-hover: #7C5DFA;
+  --light-datetime-label-color: #838dc5;
+  --light-datetime-border-color: rgba(131, 141, 197, 0.5);
+  --light-datetime-outline-color: #9277FF;
+  --light-datetime-caret-color: #9277FF;
+  --light-datetime-background-color: white;
+  --light-datetime-modal-bg-color: white;
+  --light-datetime-modal-week-hover: #7C5DFA;
 
   --side-bar-bg: #252945;
 
@@ -47,40 +86,369 @@ code {
   --dark-theme-modal-create-invoice-add-item-bg: #191c31;
 }   
 
-.dark-edit-btn {
+.dark.button-three {
   background-color: var(--dark-theme-bg-edit-btn);
   color: var(--dark-theme-color-text-edit-btn);
 }
 
-.dark-edit-btn :hover {
+.dark.button-three :hover {
   background-color: var(--dark-theme-hover-edit-btn);
 }
 
-.light-edit-btn {
+.light.button-three {
   background-color: var(--light-theme-bg-edit-btn);
   color: var(--light-theme-color-text-edit-btn);
 }
 
-.light-edit-btn :hover {
+.light.button-three :hover {
   background-color: var(--light-theme-hover-edit-btn);
 }
 
-.dark-draft-btn {
+.dark.button-four {
   background-color: var(--dark-theme-bg-draft-btn);
   color: var(--dark-theme-color-text-draft-btn);
 }
 
-.dark-draft-btn :hover {
+.dark.button-four :hover {
   background-color: var(--dark-theme-hover-draft-btn);
 }
 
-.light-draft-btn {
+.light.button-four {
   background-color: var(--light-theme-bg-draft-btn);
   color: var(--light-theme-color-text-draft-btn);
 }
 
-.light-draft-btn :hover {
+.light.button-four :hover {
   background-color: var(--light-theme-hover-draft-btn);
+}
+
+.dark.input-text-container span {
+  color: var(--dark-input-label-color);
+}
+
+.dark .input-text {
+  border: solid 1px var(--dark-input-field-border-color);
+  outline-color: var(--input-field-outline-caret-color);
+  caret-color: var(--input-field-outline-caret-color);
+  background-color: var(--dark-input-field-bg);
+  color: white;
+}
+
+.light.input-text-container span {
+  color: var(--light-input-label-color);
+}
+
+.light .input-text {
+  border: solid 1px var(--light-input-field-border-color);
+  outline-color: var(--input-field-outline-caret-color);
+  caret-color: var(--input-field-outline-caret-color);
+  background-color: var(--light-input-field-bg);
+  color: black;
+}
+
+.dark.select-input-container span {
+  color: var(--dark-select-label-color);
+}
+
+.light.select-input-container span {
+  color: var(--light-select-label-color);
+}
+
+.dark .select-container .select {
+  border: solid 1px var(--dark-select-border);
+  outline-color: var(--dark-select-outline);
+  caret-color: var(--dark-select-caret);
+  background-color: var(--dark-select-bg);
+  color: white;
+}
+
+.light .select-container .select {
+  border: solid 1px var(--light-select-border);
+  outline-color: var(--light-select-outline);
+  caret-color: var(--light-select-caret);
+  background-color: var(--light-select-bg);
+  color: black;
+}
+
+.dark .options-container {
+  background-color: var(--dark-select-options-bg);
+  color: white;
+}
+
+.light .options-container {
+  background-color: var(--light-select-options-bg);
+  color: black;
+  box-shadow: 1px 7px 10px 3px #cecece;
+}
+
+.dark .select-clicked {
+  border: solid 2px var(--select-clicked-border);
+}
+
+.light .select-clicked {
+  border: solid 2px var(--select-clicked-border);
+}
+
+.dark .select-container :hover {
+  border: solid 2px var(--select-hover-border);
+}
+
+.light .select-container :hover {
+  border: solid 2px var(--select-hover-border);
+}
+
+.dark .option {
+  border-bottom: 1px solid var(--dark-theme-body-bg);
+}
+
+.dark.input-datetime-container span {
+  color: var(--dark-datetime-label-color);
+}
+
+.light.input-datetime-container span {
+  color: var(--light-datetime-label-color);
+}
+
+.dark .datetime {
+  border: solid 1px var(--dark-datetime-border-color);
+  outline-color: var(--dark-datetime-outline-color);
+  caret-color: var(--dark-datetime-caret-color);
+  color: white;
+  background-color: var(--dark-datetime-background-color);
+}
+
+.light .datetime {
+  border: solid 1px var(--light-datetime-border-color);
+  outline-color: var(--light-datetime-outline-color);
+  caret-color: var(--light-datetime-caret-color);
+  color: black;
+  background-color: var(--light-datetime-background-color);
+}
+
+.dark .datepicker-modal-container {
+  background-color: var(--dark-datetime-modal-bg-color);
+}
+
+.light .datepicker-modal-container {
+  background-color: var(--light-datetime-modal-bg-color);
+  box-shadow: 1px 7px 10px 3px #cecece;
+}
+
+.dark .week-container :hover {
+  color: var(--dark-datetime-modal-week-hover);
+}
+
+.light .week-container :hover {
+  color: var(--light-datetime-modal-week-hover);
+}
+
+.dark .month-year-changer {
+  color: white;
+}
+
+.light .month-year-changer {
+  color: black;
+}
+
+.dark .non-current-month span {
+  color: rgba(255, 255, 255, 0.16);
+}
+
+.dark .current-month span {
+  color: white;
+}
+
+.light .non-current-month span {
+  color: rgba(0, 0, 0, 0.16);
+}
+
+.light .current-month span {
+  color: black;
+}
+
+.dark .day span {
+  font-family: 'spartan-bold';
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.light .day span {
+  font-family: 'spartan-bold';
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.dark table {
+  color: white;
+}
+
+.light table {
+  color: black;
+}
+
+.dark.side-bar-invoice-container {
+  background-color: var(--dark-theme-side-bar-invoice-bg);
+}
+
+.light.side-bar-invoice-container {
+  background-color: white;
+}
+
+.dark.buttons-bottom {
+  background-color: var(--dark-theme-side-bar-invoice-bg);
+}
+
+.light.buttons-bottom {
+  background-color: white;
+}
+
+.dark.side-bar-invoice-container h3 {
+  color: var(--dark-theme-font-color);
+}
+
+.light.side-bar-invoice-container h3 {
+  color: black;
+}
+
+.dark.modal-add-item-container  {
+  background-color: var(--dark-theme-modal-create-invoice-add-item-bg);
+}
+
+.light.modal-add-item-container {
+  background-color: white;
+}
+
+.dark.modal-add-item-container h2 {
+  color: white;
+  font-family: 'spartan-bold';
+}
+
+.light.modal-add-item-container h2 {
+  color: black;
+  font-family: 'spartan-bold';
+}
+
+.dark.modal-add-item-container .cancel-btn {
+  color: white;
+}
+
+.light.modal-add-item-container .cancel-btn {
+  color: black;
+}
+
+.dark.top-main-container {
+  background-color: var(--dark-theme-body-bg);
+}
+
+.light.top-main-container {
+  background-color: #F8F7FC;
+}
+
+.dark.invoice-container .top-part .heading-container h2 {
+  color: white;
+}
+
+.dark.invoice-container .top-part .heading-container span {
+  color: white;
+}
+
+.light.invoice-container .top-part .heading-container h2 {
+  color: black;
+}
+
+.light.invoice-container .top-part .heading-container span {
+  color: grey;
+}
+
+.dark.invoice-container .filter-by-status {
+  color: white;
+}
+
+.light.invoice-container .filter-by-status {
+  color: black;
+}
+
+.dark.item-list-container {
+  background-color: var(--side-bar-bg);
+}
+
+.light.item-list-container {
+  background-color: white;
+}
+
+.dark.item-list-container .column {
+  color: white;
+}
+
+.light.item-list-container .column {
+  color: black;
+}
+
+.dark.modal-view-invoice-container .top-header {
+  background-color: var(--side-bar-bg);
+}
+
+.light.modal-view-invoice-container .top-header {
+  background-color: white;
+}
+
+.dark.modal-view-invoice-container .top-header .left-side > span {
+  color: white;
+}
+
+.light.modal-view-invoice-container .top-header .left-side > span {
+  color: black;
+}
+
+.dark.modal-view-invoice-container .bottom-body {
+  background-color: var(--side-bar-bg);
+}
+
+.light.modal-view-invoice-container .bottom-body {
+  background-color: white;
+}
+
+.dark.modal-view-invoice-container .bottom-body .top span {
+  color: white;
+}
+
+.light.modal-view-invoice-container .bottom-body .top span {
+  color: black;
+}
+
+.dark.modal-view-invoice-container .bottom-body .bottom {
+  background-color: var(--side-bar-bg);
+}
+
+.light.modal-view-invoice-container .bottom-body .bottom {
+  border: solid 1px var(--dark-datetime-border-color);
+  background-color: white;
+}
+
+.dark.modal-view-invoice-container .bottom-body .bottom table {
+  color: white;
+}
+
+.light.modal-view-invoice-container .bottom-body .bottom table{
+  color: black;
+}
+
+.dark.modal-add-item-container {
+  background-color: var(--dark-theme-modal-create-invoice-add-item-bg);
+}
+
+.light.modal-add-item-container {
+  background-color: white;
+}
+
+.dark.modal-add-item-container h2, h4, button {
+  color: white;
+}
+
+.light.modal-add-item-container h2, h4, button {
+  color: black;
 }
 
 @font-face{

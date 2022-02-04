@@ -20,9 +20,7 @@ export const DEFAULT_CREATE_INVOICE_DATA = {
     total: "0",
     id: idGenerate(),
     paymentDue: defaultDateData,
-    addItems: [
-        {itemName: '', quantity: "", price: '', total: ''}
-    ]
+    addItems: []
 }
 
 export const ALL_FIELDS_REQUIRED = 'Please fill all fields!';

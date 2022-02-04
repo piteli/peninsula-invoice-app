@@ -4,22 +4,18 @@
     align-items: flex-start;
 }
 
-span {
+.select-input-container span {
     font-family: 'spartan-medium';
     font-size: 10px;
-    color: var(--input-label-color);
     margin-bottom: 5px;
 }
 
 .select {
     border-radius: 5px;
-    border: solid 0px var(--input-field-border-color);
     height: 35px;
     width: 175px;
-    outline-color: var(--button-action-hover);
     padding-left: 15px;
     padding-right: 15px;
-    caret-color: var(--button-action-hover);
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -32,25 +28,14 @@ span {
     display: flex;
     align-items: center;
     cursor: pointer;
-    background-color: var(--side-bar-bg);
-    color: white;
-}
-
-.select-clicked {
-    border: solid 2px var(--button-action-hover);
-}
-
-.select-container :hover {
-    border: solid 2px var(--button-action-hover);
+    position: relative;
 }
 
 .options-container {
     position: absolute;
-    bottom: 150px;
     border-radius: 5px;
+    margin-top: 70px;
     width: 230px;
-    box-shadow: 1px 7px 10px 3px #cecece;
-    background-color: var(--side-bar-bg);
 }
 
 .option {
@@ -62,5 +47,5 @@ span {
 }
 
 .option-container :hover {
-    color: var(--button-action-hover);
+    color: var(--select-option-hover);
 }
